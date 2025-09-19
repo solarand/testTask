@@ -6,8 +6,17 @@ html {
 
 body {
   max-width: 1358px;
-  border: 1px solid red;
   margin: auto;
   min-height: 100vh;
   min-width: 374px;
 }
+
+/* .modal::after {
+  content: "Закрыть";
+  position: absolute;
+  right: 0;
+  background: blue;
+  padding: 2px;
+  color: white;
+
+} */
