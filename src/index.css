@@ -5,8 +5,9 @@ html {
 }
 
 body {
-  width: 1358px;
+  max-width: 1358px;
   border: 1px solid red;
   margin: auto;
   min-height: 100vh;
+  min-width: 374px;
 }
