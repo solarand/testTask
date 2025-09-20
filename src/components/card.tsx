@@ -1,11 +1,28 @@
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import Gallery from "../services/service";
+import { openModal } from "../store/slices/modalSlice";
+
 interface IProps {
   img: string;
   id: number;
 }
 
 const ImageCard = ({ img, id }: IProps) => {
+  const dispatch = useAppDispatch();
+  const isOpen = useAppSelector((state) => state.modal.isOpen);
+
+  async function handleClick() {
+    const data = (await Gallery.getImage(id)).data;
+    dispatch(openModal(data));
+  }
+
   return (
-    <div className="max-h-[244px] min-w-0 w-full cursor-pointer hover:scale-105">
+    <div
+      className={`${
+        isOpen && "pointer-events-none"
+      } max-h-[244px] min-w-0 w-full cursor-pointer hover:scale-105`}
+      onClick={() => handleClick()}
+    >
       <img
         src={img}
         alt=""
