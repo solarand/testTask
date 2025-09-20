@@ -25,7 +25,7 @@ const MainContent = () => {
   if (loading) return <div>Загрузка...</div>;
 
   return (
-    <main className="mt-[46px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main className="mt-[46px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pl-4 pr-4 ">
       {images.map((image) => (
         <ImageCard id={image.id} img={image.image} key={image.id} />
       ))}
